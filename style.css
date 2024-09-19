@@ -1,0 +1,326 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.navbar .nav-links li {
+  margin: 0 20px;
+}
+
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+  color: #4CAF50;
+}
+
+.navbar .nav-buttons {
+  display: flex;
+}
+
+.navbar .nav-buttons button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.navbar .nav-buttons button:hover {
+  background-color: #45a049;
+}
+
+/* Hero Section Styling */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+.hero .content {
+  color: white;
+  text-align: center;
+}
+
+.hero .content h1 {
+  font-size: 4rem;
+}
+
+.hero .content p {
+  font-size: 1.5rem;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #000;
+  padding: 20px;
+  border-radius: 10px;
+  width: 350px;
+  color: white;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #45a049;
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .navbar .nav-links li {
+      margin: 0 10px;
+  }
+
+  .hero .content h1 {
+      font-size: 2.5rem;
+  }
+
+  .hero .content p {
+      font-size: 1.2rem;
+  }
+}
+
+.tool-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; /* Ensures it wraps on smaller screens */
+  margin: 40px 0;
+}
+
+/* Circular button style */
+.tool-btn {
+  width: 140px;
+  height: 140px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds shadow to give a card effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 20px; /* Adds spacing between buttons */
+}
+
+.tool-btn:hover {
+  transform: scale(1.05); /* Slight scaling effect on hover */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Icons in the button */
+.tool-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  filter: grayscale(100%); /* Adds a professional monochrome effect */
+}
+
+/* Text below the icon */
+.tool-text {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.display {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 20px;
+  background-color: #333;
+  color: white;
+  text-align: right;
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+/* Calculator buttons */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.buttons button {
+  font-size: 1.5rem;
+  padding: 20px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.buttons button:active {
+  background-color: #666;
+}
+
+/* Special buttons like AC, = */
+.buttons .special {
+  background-color: #555;
+}
+
+.buttons .special:active {
+  background-color: #777;
+}
+
+/* Equal button */
+.buttons .equal {
+  background-color: #3d72e7;
+}
+
+.buttons .equal:active {
+  background-color: #5589f5;
+}
+
+/* Open Modal Button */
+.open-modal-btn {
+  margin-top: 50px;
+  padding: 15px 30px;
+  background-color: #3d72e7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Date Picker */
+input[type="datetime-local"] {
+  padding: 10px;
+  width: 80%;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Start Button */
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #00aaff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #008fcc;
+}
+
+/* Countdown Display */
+.countdown-display {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+.countdown-display span {
+  margin: 0 10px;
+}
+
+/* Countdown Text */
+.timer-text {
+  font-size: 1rem;
+  margin-top: 20px;
+}

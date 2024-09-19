@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Tools</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Smart Tools</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Tools</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <button class="login-btn" onclick="openModal('loginModal')">Login</button>
+            <button class="signup-btn" onclick="openModal('signupModal')">Sign Up</button>
+        </div>
+    </nav>
+
+    <!-- Background Image with Overlay -->
+    <div class="hero">
+        <img src="C:\xampp\htdocs\image slider\bg.png" alt="Background Image" class="bg-image">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Welcome to Smart Tools</h1>
+            <p>All-in-one tools at your fingertips</p>
+        </div>
+    </div>
+
+    <!-- Smart tool module section -->
+<div class="tool-container">
+  <div class="tool-btn" onclick="openModal('calculatorModal')">
+      <img src="path_to_calculator_icon.png" class="tool-icon" alt="Calculator Icon">
+      <div class="tool-text">Calculator</div>
+  </div>
+  <div class="tool-btn" onclick="openModal('notepadModal')">
+      <img src="path_to_notepad_icon.png" class="tool-icon" alt="Notepad Icon">
+      <div class="tool-text">Notepad</div>
+  </div>
+  <div class="tool-btn" onclick="openModal('timerModal')">
+      <img src="path_to_timer_icon.png" class="tool-icon" alt="Timer Icon">
+      <div class="tool-text">Timer</div>
+  </div>
+  <div class="tool-btn" onclick="openModal('calendarModal')">
+      <img src="path_to_calendar_icon.png" class="tool-icon" alt="Calendar Icon">
+      <div class="tool-text">Calendar</div>
+  </div>
+  <div class="tool-btn" onclick="openModal('currencyModal')">
+      <img src="path_to_currency_icon.png" class="tool-icon" alt="Currency Icon">
+      <div class="tool-text">Currency</div>
+  </div>
+  <div class="tool-btn" onclick="openModal('measurementModal')">
+      <img src="path_to_measurement_icon.png" class="tool-icon" alt="Measurement Icon">
+      <div class="tool-text">Measurement</div>
+  </div>
+</div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+            <form>
+                <input type="email" placeholder="Email" required><br>
+                <input type="password" placeholder="Password" required><br>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+     
+
+    <!-- Sign-Up Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Sign Up</h2>
+            <form>
+                <input type="text" placeholder="Username" required><br>
+                <input type="email" placeholder="Email" required><br>
+                <input type="password" placeholder="Password" required><br>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Include the calculator modal and other content here... -->
+     <!-- Modal -->
+     <div id="calc-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+  
+            <input type="text" class="display" id="calc-display" disabled>
+  
+            <div class="buttons">
+                <button class="special" onclick="clearDisplay()">AC</button>
+                <button class="special" onclick="deleteLast()">⌫</button>
+                <button class="special" onclick="appendOperator('+/-')">+/-</button>
+                <button onclick="appendOperator('/')">÷</button>
+  
+                <button onclick="appendNumber(7)">7</button>
+                <button onclick="appendNumber(8)">8</button>
+                <button onclick="appendNumber(9)">9</button>
+                <button onclick="appendOperator('*')">×</button>
+  
+                <button onclick="appendNumber(4)">4</button>
+                <button onclick="appendNumber(5)">5</button>
+                <button onclick="appendNumber(6)">6</button>
+                <button onclick="appendOperator('-')">−</button>
+  
+                <button onclick="appendNumber(1)">1</button>
+                <button onclick="appendNumber(2)">2</button>
+                <button onclick="appendNumber(3)">3</button>
+                <button onclick="appendOperator('+')">+</button>
+  
+                <button onclick="appendOperator('%')">%</button>
+                <button onclick="appendNumber(0)">0</button>
+                <button onclick="appendOperator('.')">.</button>
+                <button class="equal" onclick="calculateResult()">=</button>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="timerModal" class="modal">
+        <div class="modal-content">
+            <button id="closeModalBtn" class="close">&times;</button>
+            
+            <!-- Timer Title -->
+            <h1>Countdown Timer</h1>
+
+            <!-- Timer Form -->
+            <input type="datetime-local" id="datetime-picker">
+            <br>
+            <button id="start-btn">Start</button>
+
+            <!-- Countdown Display -->
+            <div class="countdown-display">
+                <span id="days">00</span> :
+                <span id="hours">00</span> :
+                <span id="minutes">00</span> :
+                <span id="seconds">00</span>
+            </div>
+
+            <!-- Countdown Text -->
+            <div id="time-remaining" class="timer-text">0 Days 0 Hours 0 Minutes 0 Seconds Remaining</div>
+
+            <!-- Message Area -->
+            <div id="message" class="timer-text"></div>
+        </div>
+    </div>
+
+    <script src="custom.js"></script>
+</body>
+</html>
